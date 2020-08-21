@@ -67,6 +67,9 @@ services:
       placement:
         constraints: [node.labels.node-exporter == true]
 
+volumes:
+    prometheus-volume: {}
+
 networks:
   swnet:
     external: true
