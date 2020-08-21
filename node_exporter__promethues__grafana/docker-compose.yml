@@ -1,0 +1,74 @@
+version: "3.6"
+
+services:
+
+  prometheus:
+    build:
+      context: .
+      dockerfile: Dockerfile-prometheus
+    image: demo1:5000/rmq-prometheus
+    ports:
+      - 9090:9090
+    volumes:
+      - $HOME/data/prometheu:/prometheus
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+    networks:
+      - swnet
+    deploy:
+      mode: global
+      placement:
+        constraints: [node.labels.node == one]
+
+  grafana:
+    image: grafana/grafana:7.1.3
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=pass
+    volumes:
+      - $HOME/data/grafana.db:/var/lib/grafana/grafana.db
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+    networks:
+      - swnet
+    deploy:
+      mode: global
+      placement:
+        constraints: [node.labels.node == two]
+
+  node-exporter:
+    image: prom/node-exporter:v1.0.1
+    ports:
+      - target: 9100
+        published: 9100
+        protocol: tcp
+        mode: host
+    volumes:
+      - /etc/hostname:/etc/hostname:ro
+      - /etc/hosts:/etc/hosts:ro
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.sysfs=/host/sys'
+      - '--path.rootfs=/host'
+      - '--collector.filesystem.ignored-mount-points="^(/rootfs|/host|)/(sys|proc|dev|host|etc)($$|/)"'
+      - '--collector.filesystem.ignored-fs-types="^(sys|proc|auto|cgroup|devpts|ns|au|fuse\.lxc|mqueue)(fs|)$$"'
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+    deploy:
+      mode: global
+      placement:
+        constraints: [node.labels.node-exporter == true]
+
+networks:
+  swnet:
+    external: true
+    driver: overlay
+    attachable: true
