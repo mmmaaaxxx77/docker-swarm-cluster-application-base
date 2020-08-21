@@ -28,6 +28,8 @@ services:
       - GF_SECURITY_ADMIN_PASSWORD=pass
     volumes:
       - $HOME/data/grafana:/var/lib/grafana
+    ports:
+      - 3000:3000
     logging:
       driver: "json-file"
       options:
@@ -37,7 +39,7 @@ services:
     deploy:
       mode: global
       placement:
-        constraints: [node.labels.node == two]
+        constraints: [node.labels.node == one]
 
   node-exporter:
     image: prom/node-exporter:v1.0.1
