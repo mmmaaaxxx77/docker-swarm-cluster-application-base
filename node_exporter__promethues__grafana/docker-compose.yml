@@ -70,5 +70,3 @@ services:
 networks:
   swnet:
     external: true
-    driver: overlay
-    attachable: true
