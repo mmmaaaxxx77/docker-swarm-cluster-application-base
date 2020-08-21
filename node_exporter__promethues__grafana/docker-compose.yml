@@ -27,7 +27,7 @@ services:
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=pass
     volumes:
-      - $PWD/data/grafana:/var/lib/grafana
+      - $HOME/data/grafana:/var/lib/grafana
     ports:
       - 3000:3000
     logging:
