@@ -10,7 +10,7 @@ services:
     ports:
       - 9090:9090
     volumes:
-      - $HOME/data/prometheu:/prometheus
+      - prometheus-volume:/prometheus
     logging:
       driver: "json-file"
       options:
@@ -27,7 +27,7 @@ services:
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=pass
     volumes:
-      - $HOME/data/grafana.db:/var/lib/grafana/grafana.db
+      - $HOME/data/grafana:/var/lib/grafana
     logging:
       driver: "json-file"
       options:
