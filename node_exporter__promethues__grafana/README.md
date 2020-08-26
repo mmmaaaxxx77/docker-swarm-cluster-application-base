@@ -55,6 +55,6 @@ Service Web UI
 
 http://your-ip:9090
 
-#### Grafana Server
+#### Grafana
 
 http://your-ip:3000
