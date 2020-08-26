@@ -5,7 +5,10 @@ This Sample Environment:
 * 3 Nodes Docker Swarm Cluster: demo1, demo2, demo3
 * Docker Registry is on the demo1 Node.
 * Grafana and Promethus Server are deployed on the demo1 Node.
-* Grafana data will be save to ${HOME}/data/grafana
+* Grafana data will be save to ${HOME}/data/grafana.
+
+Notes:
+
 * If want to backup Grafana settings, just backup this ${HOME}/data/grafana folder.
 
 How To Start This Sample
