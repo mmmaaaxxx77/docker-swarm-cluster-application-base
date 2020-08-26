@@ -29,6 +29,14 @@ docker-compose -f docker-compose.yml push
 docker stack deploy -c docker-compose.yml cluster
 ```
 
+#### Label Nodes
+```shell script
+docker node update --label-add node=one demo1
+docker node update --label-add node=two demo2
+docker node update --label-add node=three demo3
+docker node update --label-add node-exporter=true demo1 demo2 demo3
+```
+
 Check Service
 ----
 
