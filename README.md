@@ -4,6 +4,7 @@ There are some samples about how to deploy HA service on Docker Swarm Cluster.
 
 
 * [node_exporter__promethues__grafana](https://github.com/mmmaaaxxx77/docker-swarm-cluster-application-base#node_exporter__promethues__grafana)
+* [rabbitmq_cluster](https://github.com/mmmaaaxxx77/docker-swarm-cluster-application-base#rabbitmq_cluster)
 
 ## node_exporter__promethues__grafana
 How to deploy a cluster monitor in few seconds.
