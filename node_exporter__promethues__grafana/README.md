@@ -1,4 +1,4 @@
-# Docker Swarm with Node-Export, Prometheus, Grafana 
+# Docker Swarm with Node-Exporter, Prometheus, Grafana 
 
 This Sample Environment:
 
