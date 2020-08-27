@@ -71,3 +71,7 @@ http://your-ip:9090
 #### Grafana
 
 http://your-ip:3000
+
+Chinese Tutorial
+----
+https://42kim.com/2020/08/26/1241/
