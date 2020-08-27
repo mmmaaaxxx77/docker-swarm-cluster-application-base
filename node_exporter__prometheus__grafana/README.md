@@ -4,7 +4,7 @@ This Sample Environment:
 
 * 3 Nodes Docker Swarm Cluster: demo1, demo2, demo3
 * Docker Registry is on the demo1 Node.
-* Grafana and Promethus Server are deployed on the demo1 Node.
+* Grafana and Prometheus Server are deployed on the demo1 Node.
 * Grafana data will be save to ${HOME}/data/grafana.
 
 Notes:
@@ -64,7 +64,7 @@ docker service ps --no-trunc cluster_grafana
 Service Web UI
 ----
 
-#### Promethus Server
+#### Prometheus Server
 
 http://your-ip:9090
 
