@@ -9,7 +9,7 @@ There are some samples about how to deploy HA service on Docker Swarm Cluster.
 ## node_exporter__promethues__grafana
 How to deploy a cluster monitor in few seconds.
 
-#### Using Services
+#### Services
 
 * Node-Exporter
 * Prometheus
@@ -21,7 +21,7 @@ How to deploy a cluster monitor in few seconds.
 ## rabbitmq_cluster
 How to deploy a HA RabbitMQ Cluster.
 
-#### Using Services
+#### Services
 
 * RabbitMQ
 * HAProxy
